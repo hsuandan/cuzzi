@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="pj2 — still in motion">
+	<main class="site-shell home">
+		<header class="masthead">
+			<a class="masthead__mark" href="/" aria-label="pj2 home"><span class="masthead__dot" aria-hidden="true"></span><span>pj2 / 0.1</span></a>
+			<span>an open experiment</span>
+		</header>
+
+		<section class="hero grid items-center" aria-labelledby="hello-title">
+			<div class="hero__type">
+				<p class="eyebrow">A second personal corner, in pencil</p>
+				<h1 id="hello-title"><span>HELLO.</span><span>I'M DAN.</span></h1>
+				<p class="hero__aside">Some shapes, some unfinished sentences, a place to begin.</p>
+			</div>
+			<figure class="playground relative isolate overflow-hidden m-0" aria-labelledby="playground-caption">
+				<div class="playground__number" aria-hidden="true">02</div><div class="shape shape--red" aria-hidden="true"></div><div class="shape shape--yellow" aria-hidden="true"></div><div class="shape shape--blue" aria-hidden="true"></div><div class="shape shape--half" aria-hidden="true"></div>
+				<svg class="playground__line" viewBox="0 0 450 240" fill="none" aria-hidden="true"><path d="M18 184C84 69 136 210 196 115s98-23 136-56c30-26 56-29 96-4" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path d="m395 35 35 20-31 27" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				<figcaption id="playground-caption">A small composition with room to misbehave.</figcaption>
+			</figure>
+		</section>
+
+		<section class="note-band grid items-start" aria-labelledby="experiment-title">
+			<div class="text-base font-black text-signal-red" aria-hidden="true">01</div>
+			<div><p class="eyebrow">Status: deliberately unresolved</p><h2 id="experiment-title">This website doesn't know what it wants to be yet.</h2></div>
+			<p>That feels useful. It can collect links, sketches, fragments, and eventually its own reasons for being here.</p>
+		</section>
+
+		<a class="resources-callout grid items-end bg-signal-yellow no-underline" href="/resources"><span class="resources-callout__kicker">A shelf, not a system</span><span class="resources-callout__title">Resources <span aria-hidden="true">↗</span></span><span class="resources-callout__note">A future index of pointers to files living elsewhere.</span></a>
+
+		<section class="elsewhere grid items-center" aria-label="Elsewhere">
+			<svg class="w-full" viewBox="0 0 170 90" aria-hidden="true"><circle cx="35" cy="45" r="28" fill="#f5c949"/><path d="M72 45h75m-19-20 20 20-20 20" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			<p>Elsewhere, there is another corner of the internet:</p><a class="hover:text-signal-blue" href="https://dansalways.top" rel="external">dansalways <span aria-hidden="true">↗</span></a>
+		</section>
+
+		<footer class="site-footer"><span>pj2 / version zero point one</span><a href="https://dansalways.top" rel="external">Elsewhere → dansalways</a></footer>
+	</main>
+
+	<style>
+		.home { padding-top: 1.2rem; }
+		.hero { grid-template-columns: minmax(0, 1.12fr) minmax(19rem, 0.88fr); gap: clamp(2rem, 6vw, 7rem); min-height: min(44rem, calc(100svh - 7rem)); padding: clamp(3rem, 8vw, 7rem) 0 clamp(3.5rem, 8vw, 7rem); }
+		.eyebrow { margin: 0 0 1.15rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+		h1 { display: grid; margin: 0; font-size: clamp(4rem, 10.4vw, 10.5rem); font-weight: 900; letter-spacing: -0.09em; line-height: 0.78; }
+		h1 span:last-child { margin-left: clamp(0.75rem, 5vw, 5rem); color: var(--color-signal-blue); }
+		.hero__aside { max-width: 20rem; margin: clamp(2rem, 6vw, 5rem) 0 0 clamp(0.8rem, 7vw, 8rem); font-size: clamp(0.95rem, 1.4vw, 1.1rem); font-weight: 600; line-height: 1.35; }
+		.playground { min-height: clamp(20rem, 35vw, 31rem); border: 3px solid var(--color-ink); background: #eee8db; }
+		.playground::after { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgb(18 18 18 / 8%) 1px, transparent 1px), linear-gradient(90deg, rgb(18 18 18 / 8%) 1px, transparent 1px); background-size: 2.5rem 2.5rem; content: ''; }
+		.playground__number { position: absolute; top: -0.23em; left: -0.08em; z-index: 1; font-size: clamp(9rem, 18vw, 18rem); font-weight: 900; letter-spacing: -0.12em; line-height: 0.8; color: rgb(18 18 18 / 11%); }
+		.shape { position: absolute; z-index: 2; transition: transform 180ms ease-out; }
+		.shape--red { top: 13%; right: 12%; width: 28%; aspect-ratio: 1; border-radius: 50%; background: var(--color-signal-red); }
+		.shape--yellow { bottom: 12%; left: 12%; width: 24%; aspect-ratio: 1; background: var(--color-signal-yellow); transform: rotate(11deg); }
+		.shape--blue { right: -2%; bottom: -8%; width: 48%; aspect-ratio: 1; background: var(--color-signal-blue); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+		.shape--half { top: 0; left: 0; width: 27%; aspect-ratio: 1; border-radius: 0 0 100% 0; background: var(--color-ink); }
+		.playground__line { position: absolute; bottom: 14%; left: 5%; z-index: 3; width: 94%; color: var(--color-ink); transition: transform 180ms ease-out; }
+		.playground figcaption { position: absolute; right: 1rem; bottom: 0.8rem; z-index: 4; max-width: 11rem; margin: 0; font-size: 0.67rem; font-weight: 700; line-height: 1.2; letter-spacing: 0.04em; text-align: right; text-transform: uppercase; color: white; }
+		.playground:hover .shape--red { transform: translate(-0.55rem, 0.45rem); } .playground:hover .shape--yellow { transform: translate(0.35rem, -0.45rem) rotate(18deg); } .playground:hover .shape--blue { transform: translate(-0.35rem, -0.3rem) rotate(-2deg); } .playground:hover .playground__line { transform: translateX(0.5rem); }
+		.note-band { grid-template-columns: auto minmax(0, 1.2fr) minmax(14rem, 0.55fr); gap: clamp(1.2rem, 4vw, 4rem); padding: clamp(2rem, 4vw, 4rem) 0; border-top: 3px solid var(--color-ink); }
+		h2 { max-width: 52rem; margin: 0; font-size: clamp(2rem, 4.3vw, 4.5rem); font-weight: 800; letter-spacing: -0.065em; line-height: 0.93; }
+		.note-band > p { margin: 0.2rem 0 0; font-size: 0.95rem; font-weight: 600; line-height: 1.35; }
+		.resources-callout { grid-template-columns: minmax(10rem, 0.55fr) minmax(0, 1.4fr) minmax(13rem, 0.55fr); gap: 1rem; padding: clamp(1.6rem, 4vw, 3.4rem) clamp(1.25rem, 4vw, 4rem); box-shadow: 0.7rem 0.7rem 0 var(--color-ink); transition: transform 180ms ease-out, box-shadow 180ms ease-out; }
+		.resources-callout:hover { transform: translate(-0.32rem, -0.32rem); box-shadow: 1rem 1rem 0 var(--color-signal-red); }
+		.resources-callout__kicker, .resources-callout__note { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.25; text-transform: uppercase; }
+		.resources-callout__title { font-size: clamp(2.6rem, 7vw, 7rem); font-weight: 900; letter-spacing: -0.09em; line-height: 0.8; }
+		.elsewhere { grid-template-columns: 10rem minmax(0, 1fr) auto; gap: clamp(1rem, 3vw, 3rem); max-width: 55rem; margin: clamp(6rem, 14vw, 11rem) 0 0 auto; }
+		.elsewhere p { margin: 0; font-size: 0.93rem; font-weight: 600; line-height: 1.3; }.elsewhere a { font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 900; letter-spacing: -0.06em; }
+		@media (max-width: 760px) { .hero { grid-template-columns: 1fr; min-height: 0; gap: 2.5rem; }.hero__aside { margin: 2.2rem 0 0 15%; }.playground { min-height: 20rem; }.note-band { grid-template-columns: auto 1fr; }.note-band > p { grid-column: 2; max-width: 27rem; }.resources-callout { grid-template-columns: 1fr; gap: 1.5rem; }.resources-callout__note { max-width: 18rem; }.elsewhere { grid-template-columns: 6rem 1fr; }.elsewhere a { grid-column: 2; } }
+		@media (max-width: 430px) { .hero { padding-top: 3rem; }h1 { font-size: clamp(3.7rem, 19vw, 5.2rem); }.playground { min-height: 17.5rem; }.note-band { grid-template-columns: 1fr; }.note-band > p { grid-column: auto; }.elsewhere { grid-template-columns: 4.7rem 1fr; gap: 0.9rem; } }
+	</style>
+</BaseLayout>
